@@ -1,59 +1,72 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>私隱政策 | 飛行模式智能助手</title>
-    <meta name="description" content="飛行模式智能助手私隱政策。">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">✈</span>
-          <span>飛行模式智能助手</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html">首頁</a>
-          <a href="terms.html">使用條款</a>
-          <a href="privacy.html">私隱政策</a>
-          <a href="contact.html">聯絡我們</a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私隱政策 · 離線智能助手</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">✈︎</span>
+        <span>離線智能助手</span>
+      </a>
+      <nav>
+        <a href="index.html">首頁</a>
+        <a class="active" href="privacy.html">私隱政策</a>
+        <a href="terms.html">使用條款</a>
+        <a href="contact.html">聯絡我們</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main class="page">
-      <article class="content">
-        <p class="eyebrow">最後更新：2026 年 5 月 26 日</p>
-        <h1>私隱政策</h1>
+  <main class="content-page">
+    <div class="wrap">
+      <h1>私隱政策</h1>
+      <p class="meta">最後更新：2026 年 5 月 26 日</p>
 
-        <h2>概要</h2>
-        <p>飛行模式智能助手以本機、離線使用為核心。離線智能包在裝置上運行，對話內容不會離開您的裝置。</p>
+      <p>離線智能助手（FlightMode AI）以<strong>本機優先</strong>為設計原則。我們盡量減少資料收集，並讓你在飛行模式下仍能使用 AI 功能。</p>
 
-        <h2>我們收集的資料</h2>
-        <p>私隱承諾：除電子郵件地址外，我們永不收集您的個人資料。</p>
-        <p>電子郵件地址只用於帳戶驗證和登入。後端也會保存驗證狀態、系統時間戳和加密雜湊後的短期驗證碼，用於維持帳戶安全。</p>
+      <h2>我們收集什麼</h2>
+      <ul>
+        <li><strong>對話內容</strong>：僅儲存在你的 iPhone 本機（Application Support），不會上傳至我們的伺服器作為聊天推理用途。</li>
+        <li><strong>模型下載</strong>：首次使用時，App 會從設定的 HTTPS 網址（VM / CDN）下載離線模型檔。此過程為檔案下載，不包含你的對話內容。</li>
+        <li><strong>裝置設定</strong>：回答風格、字數偏好、各模式對話 ID 等以 UserDefaults 形式保存在本機。</li>
+      </ul>
 
-        <h2>我們不收集的資料</h2>
-        <p>我們不收集對話內容、裝置資料、位置資料、聯絡人、相簿內容、語音內容或離線智能包狀態。</p>
+      <h2>我們不收集什麼</h2>
+      <ul>
+        <li>不要求帳號登入或電郵驗證（目前版本）。</li>
+        <li>不將聊天記錄傳送至 VM 進行伺服器端 AI 推理。</li>
+        <li>不出售個人資料。</li>
+      </ul>
 
-        <h2>電子郵件驗證</h2>
-        <p>驗證郵件由後端服務發送。驗證碼會在 10 分鐘後失效，並只以安全雜湊形式暫存。</p>
+      <h2>甜故模式（18+）</h2>
+      <p>甜故模式供成年使用者進行<strong>虛構</strong>成人向文字創作。相關內容與其他模式一樣僅保存在本機。請勿輸入可識別真實他人的敏感個人資料。</p>
 
-        <h2>本機資料</h2>
-        <p>對話、離線智能包狀態和個人偏好保存在您的裝置上。刪除 App 資料或卸載 App 可能會移除本機內容。</p>
+      <h2>資料刪除</h2>
+      <p>你可在 App 設定中：</p>
+      <ul>
+        <li>刪除離線模型包</li>
+        <li>清除各模式對話（清除按鈕）</li>
+        <li>卸載 App 以移除所有本機資料</li>
+      </ul>
 
-        <h2>聯絡</h2>
-        <p>如有私隱問題，請電郵至 <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>。</p>
-      </article>
-    </main>
+      <h2>第三方</h2>
+      <p>本 App 使用 Google LiteRT-LM 在本機執行模型推理。推理過程在裝置上完成，不由 Google 接收你的對話內容（以本 App 的離線架構為準）。</p>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span>© 2026 飛行模式智能助手</span>
-        <span><a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a></span>
-      </div>
-    </footer>
-  </body>
+      <h2>聯絡</h2>
+      <p>私隱相關問題請見 <a href="contact.html">聯絡我們</a>。</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 離線智能助手</span>
+      <span><a href="index.html">返回首頁</a></span>
+    </div>
+  </footer>
+</body>
 </html>

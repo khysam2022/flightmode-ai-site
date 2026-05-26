@@ -1,75 +1,169 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>飛行模式智能助手</title>
-    <meta name="description" content="飛行模式智能助手是一款提供離線智能體驗的旅程助手。">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <header class="site-header">
-      <nav class="nav">
-        <a class="brand" href="index.html">
-          <span class="brand-mark">✈</span>
-          <span>飛行模式智能助手</span>
-        </a>
-        <div class="nav-links">
-          <a href="index.html">首頁</a>
-          <a href="terms.html">使用條款</a>
-          <a href="privacy.html">私隱政策</a>
-          <a href="contact.html">聯絡我們</a>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="離線智能助手 — 從 VM 下載 Gemma 4，在 iPhone 本機離線推理，五種對話模式，對話僅保存在裝置上。">
+  <title>離線智能助手 · FlightMode AI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">✈︎</span>
+        <span>離線智能助手</span>
+      </a>
+      <nav>
+        <a class="active" href="index.html">首頁</a>
+        <a href="privacy.html">私隱政策</a>
+        <a href="terms.html">使用條款</a>
+        <a href="contact.html">聯絡我們</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">起飛前下載，上機後離線使用。</p>
-          <h1>飛行模式智能助手</h1>
-          <p class="lede">專為飛行途中設計的離線智能旅伴。登機前準備離線智能包，飛行途中即可在沒有網絡的情況下聊天、寫作、規劃、練習和放鬆。</p>
-          <p class="privacy-note">私隱承諾：除電子郵件地址外，我們永不收集您的個人資料。</p>
-          <div class="actions">
-            <a class="button" href="contact.html">聯絡我們</a>
-            <a class="button secondary" href="terms.html">使用條款</a>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">✓ 飛行模式就緒 · 本機 Gemma 4 推理</div>
+          <h1>起飛前下載一次，<br>整段航程離線聊天。</h1>
+          <p class="lead">
+            離線智能助手從你的 VM 下載 Gemma 4 模型包，在 iPhone 上以 LiteRT-LM + Metal GPU
+            本機執行。聊天不經伺服器，對話只存在你的裝置上。
+          </p>
+          <div class="cta-row">
+            <a class="button primary" href="#how-it-works">了解運作方式</a>
+            <a class="button secondary" href="privacy.html">私隱承諾</a>
           </div>
         </div>
 
-        <div class="grid" aria-label="飛行模式智能助手模式">
-          <article class="card">
-            <h3>解悶模式</h3>
-            <p>互動故事、問答、文字冒險和長途飛行小遊戲。</p>
-          </article>
-          <article class="card">
-            <h3>旅遊模式</h3>
-            <p>抵達安排、旅程清單、常用短語和文化提示。</p>
-          </article>
-          <article class="card">
-            <h3>高效模式</h3>
-            <p>寫作協助、計畫整理、點子發想和面試練習。</p>
-          </article>
-          <article class="card">
-            <h3>反思模式</h3>
-            <p>日記、人生規劃和離線環境中的冷靜自我整理。</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="page section">
-        <div class="content">
-          <h2>沒有網絡也能使用</h2>
-          <p>飛行模式智能助手為需要離線體驗的旅客而設。使用者在起飛前下載離線智能包，對話內容預設只保存在裝置上。</p>
-          <p>目前帳戶系統只使用電子郵件進行驗證。除電子郵件地址外，其他個人內容和使用資料都保存在您的裝置上。</p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span>© 2026 飛行模式智能助手</span>
-        <span><a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a></span>
+        <aside class="hero-card">
+          <h2>使用流程</h2>
+          <ol class="flow">
+            <li>
+              <span class="step-num">1</span>
+              <span>首次啟動，從 VM HTTPS 下載 <code>.litertlm</code> 模型包</span>
+            </li>
+            <li>
+              <span class="step-num">2</span>
+              <span>本機載入 LiteRT 引擎（GPU），準備離線推理</span>
+            </li>
+            <li>
+              <span class="step-num">3</span>
+              <span>選擇模式，AI 主動開場，全程無需網路</span>
+            </li>
+          </ol>
+        </aside>
       </div>
-    </footer>
-  </body>
+    </section>
+
+    <section id="modes">
+      <div class="wrap">
+        <h2 class="section-title">五種離線對話模式</h2>
+        <p class="section-sub">每種模式有獨立 system prompt，進入後 AI 會依模式主動開場，無需先問「想要什麼」。</p>
+        <div class="modes">
+          <article class="card">
+            <div class="icon">✨</div>
+            <h3>解悶模式</h3>
+            <p>連登式互動文字 RPG：有名字主角、短節連載、A–D 選項。懸疑／搞笑／荒謬皆可。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🛫</div>
+            <h3>旅遊模式</h3>
+            <p>降落前清單、實用短語與抵達準備，像貼心旅伴。</p>
+          </article>
+          <article class="card">
+            <div class="icon">📝</div>
+            <h3>高效模式</h3>
+            <p>飛行途中專注框架、寫作與計畫整理。</p>
+          </article>
+          <article class="card">
+            <div class="icon">🌙</div>
+            <h3>反思模式</h3>
+            <p>溫和日記引導與自我反思，語氣平靜不評判。</p>
+          </article>
+          <article class="card adult">
+            <div class="icon">💋</div>
+            <h3>甜故模式 · 18+</h3>
+            <p>互動甜故文字 RPG：有名字主角（非讀者）、短節連載、鹹濕露骨、A–D 選項。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="text-rpg">
+      <div class="wrap">
+        <h2 class="section-title">文字 RPG 怎麼玩？</h2>
+        <p class="section-sub">解悶與甜故模式均為連登互動故風格：每節開頭「故事連載中.....」，第三人稱主角，結尾 A–D 選項。</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>短節連載</h3>
+            <p>每回合 120–220 字，選項驅動劇情，可連續玩落去。</p>
+          </article>
+          <article class="card">
+            <h3>低溫度執筆</h3>
+            <p>故事模式用較低 temperature，劇情較連貫，選項清晰。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="wrap">
+        <h2 class="section-title">架構一覽</h2>
+        <p class="section-sub">VM 只負責託管模型檔；推理與對話記錄都在 iPhone 上完成。</p>
+        <div class="grid-2">
+          <article class="card">
+            <h3>VM（模型託管）</h3>
+            <p>透過 HTTPS 提供 Gemma 4 E2B <code>.litertlm</code> 下載。不接收聊天內容，不做伺服器端推理。</p>
+          </article>
+          <article class="card">
+            <h3>iPhone（邊緣推理）</h3>
+            <p>LiteRT-LM 載入已下載模型，Metal GPU 串流生成回覆。對話 JSON 僅存於 Application Support。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">裝置與私隱</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>建議 6GB+ RAM</h3>
+            <p>Gemma 4 E2B 模型較大，請在實機測試。模擬器可編譯，但 GPU 推理需實機驗證。</p>
+          </article>
+          <article class="card">
+            <h3>對話不上傳</h3>
+            <p>下載完成後，聊天內容不會傳送至 VM 或第三方 AI API。</p>
+          </article>
+          <article class="card">
+            <h3>可刪除模型包</h3>
+            <p>設定頁可刪除或重新下載離線模型，清除各模式對話記錄。</p>
+          </article>
+        </div>
+        <div class="pill-row" style="margin-top: 24px;">
+          <span class="pill">LiteRT-LM v0.12</span>
+          <span class="pill">Metal GPU</span>
+          <span class="pill">串流回覆</span>
+          <span class="pill">Increased Memory Limit</span>
+          <span class="pill">繁體中文介面</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 離線智能助手 · FlightMode AI</span>
+      <span>
+        <a href="privacy.html">私隱</a> ·
+        <a href="terms.html">條款</a> ·
+        <a href="contact.html">聯絡</a>
+      </span>
+    </div>
+  </footer>
+</body>
 </html>
