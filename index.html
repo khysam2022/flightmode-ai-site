@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="離線智能助手 — 從 VM 下載 Gemma 4，在 iPhone 本機離線推理，五種對話模式，對話僅保存在裝置上。">
+  <meta name="description" content="離線智能助手 — 從 VM 下載 Gemma 4，在 iPhone 本機離線推理。五種模式，各自獨立故事／對話記錄。">
   <title>離線智能助手 · FlightMode AI</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,41 +28,97 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow">✓ 飛行模式就緒 · 本機 Gemma 4 推理</div>
-          <h1>起飛前下載一次，<br>整段航程離線聊天。</h1>
+          <h1>起飛前下載一次，<br><span class="gradient">整段航程離線暢聊。</span></h1>
           <p class="lead">
-            離線智能助手從你的 VM 下載 Gemma 4 模型包，在 iPhone 上以 LiteRT-LM + Metal GPU
-            本機執行。聊天不經伺服器，對話只存在你的裝置上。
+            從 VM 下載 Gemma 4 模型包，在 iPhone 上以 LiteRT-LM + Metal GPU 本機執行。
+            五種模式各自保存故事／對話記錄，隨時接續上次進度。
           </p>
           <div class="cta-row">
-            <a class="button primary" href="#how-it-works">了解運作方式</a>
+            <a class="button primary" href="#history">故事記錄</a>
             <a class="button secondary" href="privacy.html">私隱承諾</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>5</strong><span>獨立模式</span></div>
+            <div class="stat"><strong>100%</strong><span>本機推理</span></div>
+            <div class="stat"><strong>0</strong><span>聊天上傳</span></div>
           </div>
         </div>
 
-        <aside class="hero-card">
-          <h2>使用流程</h2>
-          <ol class="flow">
-            <li>
-              <span class="step-num">1</span>
-              <span>首次啟動，從 VM HTTPS 下載 <code>.litertlm</code> 模型包</span>
-            </li>
-            <li>
-              <span class="step-num">2</span>
-              <span>本機載入 LiteRT 引擎（GPU），準備離線推理</span>
-            </li>
-            <li>
-              <span class="step-num">3</span>
-              <span>選擇模式，AI 主動開場，全程無需網路</span>
-            </li>
-          </ol>
-        </aside>
+        <div class="phone-mock">
+          <div class="phone-glow"></div>
+          <div class="phone-frame">
+            <div class="phone-screen">
+              <div class="phone-notch"></div>
+              <div class="phone-label">解悶模式 · 故事記錄</div>
+              <div class="phone-title">選擇連載繼續</div>
+              <div class="phone-item active">
+                <div class="phone-item-icon">✨</div>
+                <div class="phone-item-text">
+                  <strong>James 的 JUPAS 驚魂夜</strong>
+                  <span>剛剛更新</span>
+                </div>
+              </div>
+              <div class="phone-item">
+                <div class="phone-item-icon">✨</div>
+                <div class="phone-item-text">
+                  <strong>新連載 #2</strong>
+                  <span>昨天</span>
+                </div>
+              </div>
+              <div class="phone-item">
+                <div class="phone-item-icon">✨</div>
+                <div class="phone-item-text">
+                  <strong>中環迷霧中的計程車</strong>
+                  <span>3 天前</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-band" id="history">
+      <div class="wrap feature-split">
+        <div>
+          <h2 class="section-title">每種模式，各自的故事記錄</h2>
+          <p class="section-sub" style="text-align: left;">
+            點選五種模式之一，先進入該模式的對話／故事列表。每條記錄獨立保存，點一下即可接續上次劇情或對話。
+          </p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span> 五種模式各自獨立的聊天欄</li>
+            <li><span class="check">✓</span> 自動以首段內容命名故事標題</li>
+            <li><span class="check">✓</span> 右上角「＋」開始新連載／新對話</li>
+            <li><span class="check">✓</span> 左滑刪除不需要的記錄</li>
+          </ul>
+        </div>
+        <div class="history-preview">
+          <h4>旅遊模式 · 對話記錄</h4>
+          <div class="history-row">
+            <span class="history-dot"></span>
+            <span>東京降落前清單</span>
+            <time>今天</time>
+          </div>
+          <div class="history-row">
+            <span class="history-dot"></span>
+            <span>首爾地鐵換乘筆記</span>
+            <time>週一</time>
+          </div>
+          <div class="history-row">
+            <span class="history-dot"></span>
+            <span>新對話 #3</span>
+            <time>上週</time>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="modes">
       <div class="wrap">
-        <h2 class="section-title">五種離線對話模式</h2>
-        <p class="section-sub">每種模式有獨立 system prompt，進入後 AI 會依模式主動開場，無需先問「想要什麼」。</p>
+        <div class="section-head">
+          <h2 class="section-title">五種離線對話模式</h2>
+          <p class="section-sub">每種模式有獨立 system prompt，進入後 AI 依模式主動開場。</p>
+        </div>
         <div class="modes">
           <article class="card">
             <div class="icon">✨</div>
@@ -87,24 +143,7 @@
           <article class="card adult">
             <div class="icon">💋</div>
             <h3>甜故模式 · 18+</h3>
-            <p>互動甜故文字 RPG：有名字主角（非讀者）、短節連載、鹹濕露骨、A–D 選項。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="text-rpg">
-      <div class="wrap">
-        <h2 class="section-title">文字 RPG 怎麼玩？</h2>
-        <p class="section-sub">解悶與甜故模式均為連登互動故風格：每節開頭「故事連載中.....」，第三人稱主角，結尾 A–D 選項。</p>
-        <div class="grid-2">
-          <article class="card">
-            <h3>短節連載</h3>
-            <p>每回合 120–220 字，選項驅動劇情，可連續玩落去。</p>
-          </article>
-          <article class="card">
-            <h3>低溫度執筆</h3>
-            <p>故事模式用較低 temperature，劇情較連貫，選項清晰。</p>
+            <p>互動甜故文字 RPG：有名字主角、短節連載、A–D 選項。僅供成年使用者。</p>
           </article>
         </div>
       </div>
@@ -112,8 +151,10 @@
 
     <section id="how-it-works">
       <div class="wrap">
-        <h2 class="section-title">架構一覽</h2>
-        <p class="section-sub">VM 只負責託管模型檔；推理與對話記錄都在 iPhone 上完成。</p>
+        <div class="section-head">
+          <h2 class="section-title">架構一覽</h2>
+          <p class="section-sub">VM 只負責託管模型檔；推理與對話記錄都在 iPhone 上完成。</p>
+        </div>
         <div class="grid-2">
           <article class="card">
             <h3>VM（模型託管）</h3>
@@ -121,7 +162,7 @@
           </article>
           <article class="card">
             <h3>iPhone（邊緣推理）</h3>
-            <p>LiteRT-LM 載入已下載模型，Metal GPU 串流生成回覆。對話 JSON 僅存於 Application Support。</p>
+            <p>LiteRT-LM 載入已下載模型，Metal GPU 串流生成回覆。對話與故事索引僅存於 Application Support。</p>
           </article>
         </div>
       </div>
@@ -129,26 +170,28 @@
 
     <section>
       <div class="wrap">
-        <h2 class="section-title">裝置與私隱</h2>
+        <div class="section-head">
+          <h2 class="section-title">裝置與私隱</h2>
+        </div>
         <div class="grid-3">
           <article class="card">
             <h3>建議 6GB+ RAM</h3>
-            <p>Gemma 4 E2B 模型較大，請在實機測試。模擬器可編譯，但 GPU 推理需實機驗證。</p>
+            <p>Gemma 4 E2B 模型較大，請在實機測試。GPU 推理需實機驗證。</p>
           </article>
           <article class="card">
             <h3>對話不上傳</h3>
             <p>下載完成後，聊天內容不會傳送至 VM 或第三方 AI API。</p>
           </article>
           <article class="card">
-            <h3>可刪除模型包</h3>
-            <p>設定頁可刪除或重新下載離線模型，清除各模式對話記錄。</p>
+            <h3>可刪除資料</h3>
+            <p>設定頁可刪除模型包；各模式記錄可左滑刪除或清除當前對話。</p>
           </article>
         </div>
-        <div class="pill-row" style="margin-top: 24px;">
-          <span class="pill">LiteRT-LM v0.12</span>
+        <div class="pill-row" style="margin-top: 32px;">
+          <span class="pill">LiteRT-LM</span>
           <span class="pill">Metal GPU</span>
           <span class="pill">串流回覆</span>
-          <span class="pill">Increased Memory Limit</span>
+          <span class="pill">多故事記錄</span>
           <span class="pill">繁體中文介面</span>
         </div>
       </div>
@@ -159,9 +202,9 @@
     <div class="wrap">
       <span>© 2026 離線智能助手 · FlightMode AI</span>
       <span>
+        <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a> ·
         <a href="privacy.html">私隱</a> ·
-        <a href="terms.html">條款</a> ·
-        <a href="contact.html">聯絡</a>
+        <a href="terms.html">條款</a>
       </span>
     </div>
   </footer>
