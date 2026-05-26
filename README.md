@@ -28,6 +28,6 @@ python3 -m http.server 8080
 # 開啟 http://localhost:8080
 ```
 
-## 更新聯絡電郵
+## 聯絡電郵
 
-將 `contact.html` 中的 `support@flightmode-ai.example.com` 改為你的真實信箱。
+支援與私隱洽詢：**skyhkgapp@gmail.com**
