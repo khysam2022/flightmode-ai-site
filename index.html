@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="機上檔 — 離線傾計 · 機上開檔。起飛前下載一次，整段航程離線傾計、連載互動故。">
-  <title>機上檔</title>
+  <meta name="description" content="FlightMode AI — offline chat for your flight. Download once before takeoff, then chat and interactive stories with no network.">
+  <title>FlightMode AI</title>
+  <script>
+  (function () {
+    var S = ["en", "zh-Hans", "zh-Hant", "ja"];
+    var k = "flightmode-site-lang";
+    var s = localStorage.getItem(k);
+    if (!s || S.indexOf(s) === -1) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < ls.length; i++) {
+        var l = String(ls[i] || "").toLowerCase();
+        if (l.indexOf("ja") === 0) { s = "ja"; break; }
+        if (l.indexOf("zh") === 0) {
+          s = (l.indexOf("hant") !== -1 || l.indexOf("tw") !== -1 || l.indexOf("hk") !== -1 || l.indexOf("mo") !== -1) ? "zh-Hant" : "zh-Hans";
+          break;
+        }
+        if (l.indexOf("en") === 0) { s = "en"; break; }
+      }
+      s = s || "en";
+    }
+    document.documentElement.lang = s;
+    document.documentElement.dataset.lang = s;
+  })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="index">
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-inner">
       <a class="brand" href="index.html">
         <span class="brand-icon">✈︎</span>
-        <span>機上檔</span>
+        <span data-i18n="brand.name">FlightMode AI</span>
       </a>
-      <nav>
-        <a class="active" href="index.html">首頁</a>
-        <a href="privacy.html">私隱政策</a>
-        <a href="terms.html">使用條款</a>
-        <a href="contact.html">聯絡我們</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a class="active" href="index.html" data-i18n="nav.home">Home</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="terms.html" data-i18n="nav.terms">Terms</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+          <button type="button" class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+            <span class="lang-current">English</span>
+            <span class="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+            <li><button type="button" role="option" data-lang="en">English</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hant">繁體中文</button></li>
+            <li><button type="button" role="option" data-lang="ja">日本語</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -27,20 +63,19 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <div class="eyebrow">✓ 飛行模式就緒 · 全程離線</div>
-          <h1>起飛前下載一次，<br><span class="gradient">整段航程離線暢聊。</span></h1>
-          <p class="lead">
-            在 Wi‑Fi 下完成首次下載，之後即使沒有網路也能聊天、寫故事。
-            五種模式各自保存記錄，隨時接續上次進度。
+          <div class="eyebrow" data-i18n="index.hero.eyebrow">✓ Flight mode ready · Fully offline</div>
+          <h1 data-i18n-html="index.hero.title">Download once before takeoff.<br><span class="gradient">Chat offline for the entire flight.</span></h1>
+          <p class="lead" data-i18n="index.hero.lead">
+            Complete the one-time download on Wi‑Fi, then chat and write stories even without a network. Five modes keep separate histories so you can pick up where you left off.
           </p>
           <div class="cta-row">
-            <a class="button primary" href="#history">故事記錄</a>
-            <a class="button secondary" href="privacy.html">私隱承諾</a>
+            <a class="button primary" href="#history" data-i18n="index.hero.ctaHistory">Story history</a>
+            <a class="button secondary" href="privacy.html" data-i18n="index.hero.ctaPrivacy">Privacy promise</a>
           </div>
           <div class="hero-stats">
-            <div class="stat"><strong>5</strong><span>獨立模式</span></div>
-            <div class="stat"><strong>100%</strong><span>離線可用</span></div>
-            <div class="stat"><strong>0</strong><span>聊天上傳</span></div>
+            <div class="stat"><strong>5</strong><span data-i18n="index.hero.statModes">Separate modes</span></div>
+            <div class="stat"><strong>100%</strong><span data-i18n="index.hero.statOffline">Offline ready</span></div>
+            <div class="stat"><strong>0</strong><span data-i18n="index.hero.statUpload">Chat uploads</span></div>
           </div>
         </div>
 
@@ -49,27 +84,27 @@
           <div class="phone-frame">
             <div class="phone-screen">
               <div class="phone-notch"></div>
-              <div class="phone-label">解悶模式 · 故事記錄</div>
-              <div class="phone-title">選擇連載繼續</div>
+              <div class="phone-label" data-i18n="index.phone.label">Story mode · Story history</div>
+              <div class="phone-title" data-i18n="index.phone.title">Choose a series to continue</div>
               <div class="phone-item active">
                 <div class="phone-item-icon">✨</div>
                 <div class="phone-item-text">
-                  <strong>James 的 JUPAS 驚魂夜</strong>
-                  <span>剛剛更新</span>
+                  <strong data-i18n="index.phone.item1.title">James and the JUPAS Nightmare</strong>
+                  <span data-i18n="index.phone.item1.time">Just updated</span>
                 </div>
               </div>
               <div class="phone-item">
                 <div class="phone-item-icon">✨</div>
                 <div class="phone-item-text">
-                  <strong>新連載 #2</strong>
-                  <span>昨天</span>
+                  <strong data-i18n="index.phone.item2.title">New series #2</strong>
+                  <span data-i18n="index.phone.item2.time">Yesterday</span>
                 </div>
               </div>
               <div class="phone-item">
                 <div class="phone-item-icon">✨</div>
                 <div class="phone-item-text">
-                  <strong>中環迷霧中的計程車</strong>
-                  <span>3 天前</span>
+                  <strong data-i18n="index.phone.item3.title">Taxi in the Central fog</strong>
+                  <span data-i18n="index.phone.item3.time">3 days ago</span>
                 </div>
               </div>
             </div>
@@ -81,33 +116,33 @@
     <section class="feature-band" id="history">
       <div class="wrap feature-split">
         <div>
-          <h2 class="section-title">每種模式，各自的故事記錄</h2>
-          <p class="section-sub" style="text-align: left;">
-            點選五種模式之一，先進入該模式的對話／故事列表。每條記錄獨立保存，點一下即可接續上次劇情或對話。
+          <h2 class="section-title" data-i18n="index.history.title">Each mode has its own story history</h2>
+          <p class="section-sub" style="text-align: left;" data-i18n="index.history.sub">
+            Tap one of five modes to open that mode’s chat or story list. Every entry is saved separately—tap to continue the plot or conversation.
           </p>
           <ul class="feature-list">
-            <li><span class="check">✓</span> 五種模式各自獨立的聊天欄</li>
-            <li><span class="check">✓</span> 自動以首段內容命名故事標題</li>
-            <li><span class="check">✓</span> 右上角「＋」開始新連載／新對話</li>
-            <li><span class="check">✓</span> 左滑刪除不需要的記錄</li>
+            <li><span class="check">✓</span> <span data-i18n="index.history.f1">Separate chat lists for all five modes</span></li>
+            <li><span class="check">✓</span> <span data-i18n="index.history.f2">Story titles auto-named from the opening</span></li>
+            <li><span class="check">✓</span> <span data-i18n="index.history.f3">Tap “+” to start a new series or chat</span></li>
+            <li><span class="check">✓</span> <span data-i18n="index.history.f4">Swipe left to delete entries you don’t need</span></li>
           </ul>
         </div>
         <div class="history-preview">
-          <h4>旅遊模式 · 對話記錄</h4>
+          <h4 data-i18n="index.history.preview.title">Travel mode · Chat history</h4>
           <div class="history-row">
             <span class="history-dot"></span>
-            <span>東京降落前清單</span>
-            <time>今天</time>
+            <span data-i18n="index.history.preview.r1">Tokyo pre-landing checklist</span>
+            <time data-i18n="index.history.preview.r1.time">Today</time>
           </div>
           <div class="history-row">
             <span class="history-dot"></span>
-            <span>首爾地鐵換乘筆記</span>
-            <time>週一</time>
+            <span data-i18n="index.history.preview.r2">Seoul subway transfer notes</span>
+            <time data-i18n="index.history.preview.r2.time">Mon</time>
           </div>
           <div class="history-row">
             <span class="history-dot"></span>
-            <span>新對話 #3</span>
-            <time>上週</time>
+            <span data-i18n="index.history.preview.r3">New chat #3</span>
+            <time data-i18n="index.history.preview.r3.time">Last week</time>
           </div>
         </div>
       </div>
@@ -116,34 +151,34 @@
     <section id="modes">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">五種離線模式</h2>
-          <p class="section-sub">每種模式風格不同，進入後 AI 會主動開場，無需先說「你好」。</p>
+          <h2 class="section-title" data-i18n="index.modes.title">Five offline modes</h2>
+          <p class="section-sub" data-i18n="index.modes.sub">Each mode has a different tone. The AI opens the conversation—no need to say hello first.</p>
         </div>
         <div class="modes">
           <article class="card">
             <div class="icon">✨</div>
-            <h3>解悶模式</h3>
-            <p>互動文字故事：有名字主角、短節連載、A–D 選項。懸疑／搞笑／荒謬皆可。</p>
+            <h3 data-i18n="index.modes.story.title">Story mode</h3>
+            <p data-i18n="index.modes.story.desc">Interactive text stories with named protagonists, short episodic chapters, and A–D choices.</p>
           </article>
           <article class="card">
             <div class="icon">🛫</div>
-            <h3>旅遊模式</h3>
-            <p>降落前清單、實用短語與抵達準備，像貼心旅伴。</p>
+            <h3 data-i18n="index.modes.travel.title">Travel mode</h3>
+            <p data-i18n="index.modes.travel.desc">Pre-landing checklists, useful phrases, and arrival prep—like a thoughtful travel companion.</p>
           </article>
           <article class="card">
             <div class="icon">📝</div>
-            <h3>高效模式</h3>
-            <p>飛行途中專注框架、寫作與計畫整理。</p>
+            <h3 data-i18n="index.modes.productive.title">Productive mode</h3>
+            <p data-i18n="index.modes.productive.desc">Focus frameworks, writing, and planning while you fly.</p>
           </article>
           <article class="card">
             <div class="icon">🌙</div>
-            <h3>反思模式</h3>
-            <p>溫和日記引導與自我反思，語氣平靜不評判。</p>
+            <h3 data-i18n="index.modes.reflect.title">Reflect mode</h3>
+            <p data-i18n="index.modes.reflect.desc">Gentle journaling prompts and self-reflection in a calm, non-judgmental tone.</p>
           </article>
           <article class="card adult">
             <div class="icon">💋</div>
-            <h3>甜故模式 · 18+</h3>
-            <p>互動甜故文字故事：有名字主角、短節連載、A–D 選項。僅供成年使用者。</p>
+            <h3 data-i18n="index.modes.romance.title">Romance mode · 18+</h3>
+            <p data-i18n="index.modes.romance.desc">Interactive romance text stories with named protagonists, short chapters, and A–D choices. Adults only.</p>
           </article>
         </div>
       </div>
@@ -152,24 +187,24 @@
     <section id="how-it-works">
       <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">使用方式</h2>
-          <p class="section-sub">簡單三步，起飛後也能用。</p>
+          <h2 class="section-title" data-i18n="index.how.title">How it works</h2>
+          <p class="section-sub" data-i18n="index.how.sub">Three simple steps—ready after takeoff.</p>
         </div>
         <div class="grid-3">
           <article class="card">
             <div class="icon">1</div>
-            <h3>首次下載</h3>
-            <p>在有 Wi‑Fi 時完成一次性下載，之後無需再連網。</p>
+            <h3 data-i18n="index.how.s1.title">First download</h3>
+            <p data-i18n="index.how.s1.desc">Complete the one-time download on Wi‑Fi. No network needed afterward.</p>
           </article>
           <article class="card">
             <div class="icon">2</div>
-            <h3>選擇模式</h3>
-            <p>解悶、旅遊、高效、反思或甜故，各取所需。</p>
+            <h3 data-i18n="index.how.s2.title">Pick a mode</h3>
+            <p data-i18n="index.how.s2.desc">Story, travel, productive, reflect, or romance—whatever fits your flight.</p>
           </article>
           <article class="card">
             <div class="icon">3</div>
-            <h3>開始聊天</h3>
-            <p>AI 會主動開場；故事與對話只保存在你的 iPhone 上。</p>
+            <h3 data-i18n="index.how.s3.title">Start chatting</h3>
+            <p data-i18n="index.how.s3.desc">The AI opens first. Stories and chats stay on your device only.</p>
           </article>
         </div>
       </div>
@@ -178,27 +213,27 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <h2 class="section-title">私隱與安心</h2>
+          <h2 class="section-title" data-i18n="index.trust.title">Privacy & peace of mind</h2>
         </div>
         <div class="grid-3">
           <article class="card">
-            <h3>建議較新 iPhone</h3>
-            <p>首次下載檔案較大，建議預留足夠儲存空間與記憶體。</p>
+            <h3 data-i18n="index.trust.s1.title">Newer device recommended</h3>
+            <p data-i18n="index.trust.s1.desc">The first download is large—leave enough storage and memory.</p>
           </article>
           <article class="card">
-            <h3>對話不上傳</h3>
-            <p>下載完成後，聊天內容不會傳送到任何伺服器。</p>
+            <h3 data-i18n="index.trust.s2.title">Chats are not uploaded</h3>
+            <p data-i18n="index.trust.s2.desc">After download, chat content is never sent to any server.</p>
           </article>
           <article class="card">
-            <h3>可隨時刪除</h3>
-            <p>設定頁可刪除下載內容；各模式記錄可左滑刪除或清除當前對話。</p>
+            <h3 data-i18n="index.trust.s3.title">Delete anytime</h3>
+            <p data-i18n="index.trust.s3.desc">Remove downloaded content in Settings; swipe to delete histories or clear the current chat.</p>
           </article>
         </div>
         <div class="pill-row" style="margin-top: 32px;">
-          <span class="pill">完全離線</span>
-          <span class="pill">即時回覆</span>
-          <span class="pill">多故事記錄</span>
-          <span class="pill">繁體中文介面</span>
+          <span class="pill" data-i18n="index.pill.offline">Fully offline</span>
+          <span class="pill" data-i18n="index.pill.instant">Instant replies</span>
+          <span class="pill" data-i18n="index.pill.multi">Multiple stories</span>
+          <span class="pill" data-i18n="index.pill.lang">Multilingual UI</span>
         </div>
       </div>
     </section>
@@ -206,13 +241,14 @@
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 機上檔</span>
+      <span data-i18n="footer.copyright">© 2026 FlightMode AI</span>
       <span>
         <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a> ·
-        <a href="privacy.html">私隱</a> ·
-        <a href="terms.html">條款</a>
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a> ·
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
       </span>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 </body>
 </html>

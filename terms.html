@@ -1,86 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>使用條款 · 機上檔</title>
+  <title>Terms of Use · FlightMode AI</title>
+  <script>
+  (function () {
+    var S = ["en", "zh-Hans", "zh-Hant", "ja"];
+    var k = "flightmode-site-lang";
+    var s = localStorage.getItem(k);
+    if (!s || S.indexOf(s) === -1) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < ls.length; i++) {
+        var l = String(ls[i] || "").toLowerCase();
+        if (l.indexOf("ja") === 0) { s = "ja"; break; }
+        if (l.indexOf("zh") === 0) {
+          s = (l.indexOf("hant") !== -1 || l.indexOf("tw") !== -1 || l.indexOf("hk") !== -1 || l.indexOf("mo") !== -1) ? "zh-Hant" : "zh-Hans";
+          break;
+        }
+        if (l.indexOf("en") === 0) { s = "en"; break; }
+      }
+      s = s || "en";
+    }
+    document.documentElement.lang = s;
+    document.documentElement.dataset.lang = s;
+  })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="terms">
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-inner">
       <a class="brand" href="index.html">
         <span class="brand-icon">✈︎</span>
-        <span>機上檔</span>
+        <span data-i18n="brand.name">FlightMode AI</span>
       </a>
-      <nav>
-        <a href="index.html">首頁</a>
-        <a href="privacy.html">私隱政策</a>
-        <a class="active" href="terms.html">使用條款</a>
-        <a href="contact.html">聯絡我們</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a class="active" href="terms.html" data-i18n="nav.terms">Terms</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+          <button type="button" class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+            <span class="lang-current">English</span>
+            <span class="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+            <li><button type="button" role="option" data-lang="en">English</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hant">繁體中文</button></li>
+            <li><button type="button" role="option" data-lang="ja">日本語</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="content-page">
     <div class="wrap">
-      <h1>使用條款</h1>
-      <p class="meta">最後更新：2026 年 6 月 4 日</p>
+      <h1 data-i18n="terms.title">Terms of Use</h1>
+      <p class="meta" data-i18n="terms.meta">Last updated: June 4, 2026</p>
 
-      <p>使用機上檔即表示你同意以下條款。若不同意，請勿使用本 App。</p>
+      <p data-i18n="terms.intro"></p>
 
-      <h2>服務說明</h2>
-      <p>本 App 提供離線 AI 對話與互動故事功能。首次使用需在有網路時完成下載，之後可在無網路環境下使用。聊天內容只保存在你的裝置上。</p>
+      <h2 data-i18n="terms.s1.title">Service description</h2>
+      <p data-i18n="terms.s1.p"></p>
 
-      <h2>使用資格</h2>
+      <h2 data-i18n="terms.s2.title">Eligibility</h2>
       <ul>
-        <li>你須對裝置及 App 內容的使用負責。</li>
-        <li><strong>甜故模式</strong>僅供年滿 18 歲之使用者使用，內容為虛構成人向創作，不得用於騷擾、非法或侵害他人權益之用途。</li>
+        <li data-i18n="terms.s2.li1"></li>
+        <li data-i18n-html="terms.s2.li2"></li>
       </ul>
 
-      <h2>可接受使用</h2>
+      <h2 data-i18n="terms.s3.title">Acceptable use</h2>
       <ul>
-        <li>不得利用本 App 生成違法內容、針對真實個人之非自願露骨內容，或煽動暴力／仇恨。</li>
-        <li>AI 生成內容可能不準確；請勿作為專業醫療、法律或安全決策之唯一依據。</li>
-        <li>飛行期間請遵守航空公司及當地法規對電子裝置與內容之規定。</li>
+        <li data-i18n="terms.s3.li1"></li>
+        <li data-i18n="terms.s3.li2"></li>
+        <li data-i18n="terms.s3.li3"></li>
       </ul>
 
-      <h2>下載與儲存</h2>
-      <p>首次下載檔案較大，需穩定網路與足夠儲存空間。若下載中斷，可在 App 內重新下載。</p>
+      <h2 data-i18n="terms.s4.title">Download & storage</h2>
+      <p data-i18n="terms.s4.p"></p>
 
-      <h2>App 內購買與自動續訂訂閱</h2>
-      <p>機上檔提供一次性購買的劇本、目的地資源包，以及<strong>FlightMode 故事訂閱</strong>（自動續訂）等 App 內購買項目。</p>
+      <h2 data-i18n="terms.s5.title">In-app purchases & auto-renewing subscription</h2>
+      <p data-i18n-html="terms.s5.p1"></p>
       <ul>
-        <li><strong>訂閱名稱：</strong>FlightMode 故事訂閱（Story Subscription）</li>
-        <li><strong>訂閱長度：</strong>1 個月</li>
-        <li><strong>訂閱價格：</strong>以 App Store 顯示的本地價格為準（例如香港 HK$28／月）</li>
-        <li><strong>訂閱內容：</strong>解鎖自訂主角、場景、類型設定，以及劇本模板上載與公開分享功能。</li>
-        <li><strong>自動續訂：</strong>除非在目前訂閱期結束前至少 24 小時取消，否則訂閱會自動續期，並向你的 Apple ID 帳戶收費。</li>
-        <li><strong>管理與取消：</strong>可在 iPhone「設定 → Apple ID → 訂閱項目」中查看、更改或取消訂閱。取消後，已付費期間內仍可使用訂閱功能，直至該期結束。</li>
-        <li><strong>恢復購買：</strong>可在 App 內訂閱畫面按「恢復購買」，以同一 Apple ID 恢復已購項目。</li>
+        <li data-i18n-html="terms.s5.li1"></li>
+        <li data-i18n-html="terms.s5.li2"></li>
+        <li data-i18n-html="terms.s5.li3"></li>
+        <li data-i18n-html="terms.s5.li4"></li>
+        <li data-i18n-html="terms.s5.li5"></li>
+        <li data-i18n-html="terms.s5.li6"></li>
+        <li data-i18n-html="terms.s5.li7"></li>
       </ul>
-      <p>一次性購買項目（劇本、資源包）不會自動續訂。付款由 Apple 處理；我們不會儲存你的信用卡資料。</p>
-      <p>私隱政策：<a href="privacy.html">privacy.html</a></p>
+      <p data-i18n="terms.s5.p2"></p>
+      <p data-i18n-html="terms.s5.p3"></p>
 
-      <h2>免責聲明</h2>
-      <p>本 App 按「現狀」提供。開發者不對因 AI 回覆內容、裝置相容性、記憶體不足或飛行環境導致之中斷負責。</p>
+      <h2 data-i18n="terms.s6.title">Disclaimer</h2>
+      <p data-i18n="terms.s6.p"></p>
 
-      <h2>條款變更</h2>
-      <p>我們可能更新本條款；更新後繼續使用即視為接受修訂版本。</p>
+      <h2 data-i18n="terms.s7.title">Changes</h2>
+      <p data-i18n="terms.s7.p"></p>
 
-      <h2>聯絡</h2>
-      <p>如有問題請寄至 <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>，或見 <a href="contact.html">聯絡我們</a>。</p>
+      <h2 data-i18n="terms.s8.title">Contact</h2>
+      <p data-i18n-html="terms.s8.p"></p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 機上檔</span>
+      <span data-i18n="footer.copyright">© 2026 FlightMode AI</span>
       <span>
         <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a> ·
-        <a href="index.html">返回首頁</a>
+        <a href="index.html" data-i18n="footer.backHome">Back to home</a>
       </span>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 </body>
 </html>

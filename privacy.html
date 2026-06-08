@@ -1,70 +1,107 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>私隱政策 · 機上檔</title>
+  <title>Privacy Policy · FlightMode AI</title>
+  <script>
+  (function () {
+    var S = ["en", "zh-Hans", "zh-Hant", "ja"];
+    var k = "flightmode-site-lang";
+    var s = localStorage.getItem(k);
+    if (!s || S.indexOf(s) === -1) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < ls.length; i++) {
+        var l = String(ls[i] || "").toLowerCase();
+        if (l.indexOf("ja") === 0) { s = "ja"; break; }
+        if (l.indexOf("zh") === 0) {
+          s = (l.indexOf("hant") !== -1 || l.indexOf("tw") !== -1 || l.indexOf("hk") !== -1 || l.indexOf("mo") !== -1) ? "zh-Hant" : "zh-Hans";
+          break;
+        }
+        if (l.indexOf("en") === 0) { s = "en"; break; }
+      }
+      s = s || "en";
+    }
+    document.documentElement.lang = s;
+    document.documentElement.dataset.lang = s;
+  })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="privacy">
   <header class="site-header">
-    <div class="wrap">
+    <div class="wrap header-inner">
       <a class="brand" href="index.html">
         <span class="brand-icon">✈︎</span>
-        <span>機上檔</span>
+        <span data-i18n="brand.name">FlightMode AI</span>
       </a>
-      <nav>
-        <a href="index.html">首頁</a>
-        <a class="active" href="privacy.html">私隱政策</a>
-        <a href="terms.html">使用條款</a>
-        <a href="contact.html">聯絡我們</a>
-      </nav>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a class="active" href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="terms.html" data-i18n="nav.terms">Terms</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+          <button type="button" class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+            <span class="lang-current">English</span>
+            <span class="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+            <li><button type="button" role="option" data-lang="en">English</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hant">繁體中文</button></li>
+            <li><button type="button" role="option" data-lang="ja">日本語</button></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="content-page">
     <div class="wrap">
-      <h1>私隱政策</h1>
-      <p class="meta">最後更新：2026 年 5 月 26 日</p>
+      <h1 data-i18n="privacy.title">Privacy Policy</h1>
+      <p class="meta" data-i18n="privacy.meta">Last updated: May 26, 2026</p>
 
-      <p>機上檔<strong>不在伺服器保存你的離線對話</strong>。你的聊天內容與離線故事創作完全保留在你的本機裝置上，我們看不到你的離線聊天內容。我們僅在帳號登入與意見反饋時，收集與記錄必要的電子郵件地址以驗證身份。</p>
+      <p data-i18n-html="privacy.intro">FlightMode AI <strong>does not store your offline conversations on our servers</strong>.</p>
 
-      <h2>我們僅收集必要資料</h2>
+      <h2 data-i18n="privacy.s1.title">We collect only what’s necessary</h2>
       <ul>
-        <li>你的離線聊天和故事<strong>不會傳給我們</strong>，我們沒有伺服器後台會保存或分析你的離線聊天。</li>
-        <li>我們僅要求提供電子郵件地址以使用驗證碼進行帳號登入，以及收發意見反饋。</li>
-        <li>我們絕不出售或與第三方分享任何資料。</li>
+        <li data-i18n-html="privacy.s1.li1"></li>
+        <li data-i18n="privacy.s1.li2"></li>
+        <li data-i18n="privacy.s1.li3"></li>
       </ul>
 
-      <h2>記錄只留在你的 iPhone 上</h2>
-      <p>為了讓你下次可以接續聊天，App 會把對話留在<strong>你的 iPhone 裡</strong>——就像備忘錄一樣，只有你自己看得到。這不是我們的伺服器在保存，我們也取不到這些內容。</p>
-      <p>首次使用需連網下載一次 App 所需檔案；下載的是 App 本身要用的資料，<strong>不是你的聊天</strong>。之後在飛行模式下可全程離線使用。</p>
+      <h2 data-i18n="privacy.s2.title">Records stay on your device</h2>
+      <p data-i18n-html="privacy.s2.p1"></p>
+      <p data-i18n-html="privacy.s2.p2"></p>
 
-      <h2>甜故模式（18+）</h2>
-      <p>甜故模式供成年使用者進行<strong>虛構</strong>成人向文字創作，內容同樣只留在你的裝置上。請勿輸入可識別真實他人的敏感資料。</p>
+      <h2 data-i18n="privacy.s3.title">Romance mode (18+)</h2>
+      <p data-i18n-html="privacy.s3.p"></p>
 
-      <h2>如何刪除</h2>
-      <p>你可以隨時在 iPhone 上自行刪除：</p>
+      <h2 data-i18n="privacy.s4.title">How to delete</h2>
+      <p data-i18n="privacy.s4.p"></p>
       <ul>
-        <li>左滑刪除某條故事／對話記錄</li>
-        <li>在聊天中按「清除」重置當前對話</li>
-        <li>在設定中刪除已下載的離線內容</li>
-        <li>卸載 App，移除全部本機資料</li>
+        <li data-i18n="privacy.s4.li1"></li>
+        <li data-i18n="privacy.s4.li2"></li>
+        <li data-i18n="privacy.s4.li3"></li>
+        <li data-i18n="privacy.s4.li4"></li>
       </ul>
 
-      <h2>聯絡</h2>
-      <p>私隱相關問題請寄至 <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>，或見 <a href="contact.html">聯絡我們</a>。</p>
+      <h2 data-i18n="privacy.s5.title">Contact</h2>
+      <p data-i18n-html="privacy.s5.p"></p>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="wrap">
-      <span>© 2026 機上檔</span>
+      <span data-i18n="footer.copyright">© 2026 FlightMode AI</span>
       <span>
         <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a> ·
-        <a href="index.html">返回首頁</a>
+        <a href="index.html" data-i18n="footer.backHome">Back to home</a>
       </span>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 </body>
 </html>
