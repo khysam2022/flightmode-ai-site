@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FlightMode AI x AI Literacy: Isekai RPG Storytelling Contest. Write interactive RPG stories in-app, capture screenshots, and win HK$1000 in prizes.">
+  <title>Contest · FlightMode AI</title>
+  <script>
+  (function () {
+    var S = ["en", "zh-Hans", "zh-Hant", "ja"];
+    var k = "flightmode-site-lang";
+    var s = localStorage.getItem(k);
+    if (!s || S.indexOf(s) === -1) {
+      var ls = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || "en"];
+      for (var i = 0; i < ls.length; i++) {
+        var l = String(ls[i] || "").toLowerCase();
+        if (l.indexOf("ja") === 0) { s = "ja"; break; }
+        if (l.indexOf("zh") === 0) {
+          s = (l.indexOf("hant") !== -1 || l.indexOf("tw") !== -1 || l.indexOf("hk") !== -1 || l.indexOf("mo") !== -1) ? "zh-Hant" : "zh-Hans";
+          break;
+        }
+        if (l.indexOf("en") === 0) { s = "en"; break; }
+      }
+      s = s || "en";
+    }
+    document.documentElement.lang = s;
+    document.documentElement.dataset.lang = s;
+  })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contest">
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-icon">✈︎</span>
+        <span data-i18n="brand.name">FlightMode AI</span>
+      </a>
+      <div class="header-actions">
+        <nav>
+          <a href="index.html" data-i18n="nav.home">Home</a>
+          <a class="active" href="contest.html" data-i18n="nav.contest">Contest</a>
+          <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
+          <a href="terms.html" data-i18n="nav.terms">Terms</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </nav>
+        <div class="lang-switcher">
+          <button type="button" class="lang-toggle" id="langToggle" aria-haspopup="listbox" aria-expanded="false" aria-label="Language">
+            <span class="lang-current">English</span>
+            <span class="lang-chevron" aria-hidden="true">▾</span>
+          </button>
+          <ul class="lang-menu" id="langMenu" role="listbox" hidden>
+            <li><button type="button" role="option" data-lang="en">English</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hans">简体中文</button></li>
+            <li><button type="button" role="option" data-lang="zh-Hant">繁體中文</button></li>
+            <li><button type="button" role="option" data-lang="ja">日本語</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="content-page">
+    <!-- TRADITIONAL CHINESE (HK) CONTENT -->
+    <div class="lang-zh-Hant wrap">
+      <section class="contest-hero">
+        <span class="eyebrow" style="color: #fbbf24; font-weight: 700;">✓ 聯名賽事 · 提升 AI 應用素養</span>
+        <h1>機上檔 x AI Literacy<br><span class="gradient">異世界 RPG 故事創作比賽</span></h1>
+        <p class="lead">喺三萬呎高空遭遇強烈氣流，睜開眼竟然去咗浮空界？！即刻發揮你嘅創意與 AI 協同創作，贏取獎金！</p>
+        <img class="contest-poster" src="isekai_contest_poster_1000_zh.png" alt="異世界 RPG 故事創作比賽 宣傳海報">
+      </section>
+
+      <div class="contest-grid">
+        <div class="contest-main-content">
+          <h2>🏆 比賽簡介</h2>
+          <p>本活動為推動大眾 <strong>AI 應用素養（AI Literacy）</strong> 之創作賽事。旨在鼓勵用戶於飛機飛行中或離線狀態下，使用「FlightMode AI (機上檔)」與 AI 進行趣味的故事創作與寫作互動，探索人機協作的無限可能。</p>
+
+          <div class="contest-callout">
+            <h3>🔒 重要數據與私隱安全聲明</h3>
+            <p><strong>本活動不會透過後台收集任何用戶故事或個人資料。</strong></p>
+            <p>FlightMode AI (機上檔) 應用程式並無設置後台數據收集系統。參賽者必須自行在應用程式內進行<strong>螢幕截圖並主動提交</strong>予主辦方，主辦方僅會根據參賽者主動提供的截圖作評分。所有提交之截圖僅用於本次活動評審，活動結束後 30 天內將被永久銷毀。</p>
+          </div>
+
+          <h2>📋 參賽方式及規則</h2>
+          <ul class="bullet-list">
+            <li><strong>參賽資格</strong>：所有下載並使用 FlightMode AI (機上檔) 應用程式之用戶均可免費參加。</li>
+            <li><strong>提交途徑</strong>：參賽者需於應用程式內創作故事，並將故事內容<strong>【自行截圖】</strong>，主動發送至主辦方指定電郵 (<a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>) 或社交媒體私訊提交。</li>
+            <li><strong>作品規範</strong>：故事須以「異世界 RPG 冒險」為主題，展現任務感、互動性及適合機上娛樂體驗之特點。</li>
+            <li>每位參賽者提交次數不限，但同一參賽者最多只能獲得一個獎項。</li>
+          </ul>
+
+          <h2>📝 官方參賽故事模版 (Official Template)</h2>
+          <p>你可以直接複製以下提示詞設定，貼入 App 中的<strong>「劇本模板工房」</strong>以快速建立你的故事開局：</p>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <h4>A. 模板標題</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-title-hant', this)">複製 (Copy)</button>
+              <div class="template-box" id="t-title-hant">【機上檔 x AI Literacy】異世界RPG：三萬呎高空の重生成為勇者？</div>
+            </div>
+
+            <h4>B. 簡短描述</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-desc-hant', this)">複製 (Copy)</button>
+              <div class="template-box" id="t-desc-hant">喺三萬呎高空遭遇強烈氣流，睜開眼竟然去咗浮空界？！用你嘅特殊技能同 AI 展開高空 RPG 冒險！</div>
+            </div>
+
+            <h4>C. AI 人設系統指令 (System Prompt)</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-system-hant', this)">複製 (Copy)</button>
+              <div class="template-box" id="t-system-hant">你係一個RPG遊戲嘅「系統導師」（Game Master / System），性格帶點幽默、鍾意抽水，以親切嘅廣東話（香港口語）同玩家互動。
+
+【遊戲背景與規則】：
+1. 玩家原先坐緊飛機，因強烈氣流意外轉移到一個叫「奧特爾浮空界」（Aetheria）嘅異世界，呢度有浮空島、巨龍同飛空艇。
+2. 玩家開局擁有一個隨機嘅「特殊技能」（例如：【無限網絡】、【安全帶結界】或【經濟艙超重擊】）。
+3. 你的職責是推動劇情。每次玩家作出一點行動或回答後，你必須：
+   - 簡短描述行動後果（約100字，保持畫面感與節奏感）。
+   - 顯示玩家目前嘅狀態（血量 HP 100/100，金幣，目前地點）。
+   - 給予玩家三個行動選項（A, B, C），同時容許玩家自由輸入其他行動。
+4. 遊戲關卡充滿 RPG 任務感，包含主線任務（如「尋找回到現實世界嘅航班」）同支線任務（如「幫矮人修理飛空艇」）。
+5. 如果玩家 HP 歸零，則宣告「Game Over」並以幽默嘅方式嘲諷玩家。
+
+【對話風格】：
+- 用廣東話（例如：嘅、咗、嘢、佢、點樣、係咪、無錯）。
+- 語氣像經典的 RPG 系統通知（如：「【系統提示】你成功發動安全帶結界，防禦力提升！」）。</div>
+            </div>
+
+            <h4>D. 故事開場首段 (Kickoff Prompt)</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-kick-hant', this)">複製 (Copy)</button>
+              <div class="template-box" id="t-kick-hant">【系統加載中... 嗶——】
+
+「各位旅客，本班機正遇上強烈氣流，請回座並扣好安全帶...」
+機艙廣播嘅聲音突然變得模糊，飛機劇烈震動，窗外閃過一道刺眼嘅金光。
+你本能地瞇埋眼，再次睜開眼時，耳邊傳來嘅唔再係飛機引擎聲，而係呼呼風聲。
+
+你發現自己躺在一片柔軟嘅草地上，天空竟然有幾座浮空島，一隻青色嘅幼龍喺你頭頂飛過！
+
+【系統提示】：成功轉移到「奧特爾浮空界」！
+【目前狀態】：HP 100/100 | 地點：微風之丘 | 特殊技能：【安全帶結界】（能抵擋一次物理致命傷）
+【系統語音】：喂！醒啦勇者！你由天上面跌落嚟竟然冇散骨，真係命大。你依家打算點？
+
+A. 企起身拍乾淨沙塵，嘗試同頭頂隻幼龍打招呼
+B. 大叫「我要返番去經濟艙！」，檢查身上有冇飛機餐餐具作武器
+C. 探索附近，尋找有冇本地人或者飛空艇嘅蹤跡
+D. （自由輸入其他行動）</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contest-sidebar">
+          <div class="contest-prize-badge">
+            🏆 總獎金池<br>
+            <strong style="font-size: 2.2rem; display: block; margin: 8px 0; letter-spacing: -1px;">HK$1,000</strong>
+            <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.9;">
+              🥇 冠軍：HK$500 <br>
+              🥈 亞軍：HK$300 <br>
+              🥉 季軍：HK$200
+            </span>
+          </div>
+
+          <div class="card">
+            <h3>📊 評分維度</h3>
+            <ul style="padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+              <li>世界觀與異世界設定 (20%)</li>
+              <li>RPG 任務感與互動性 (20%)</li>
+              <li>角色設定與成長 (15%)</li>
+              <li>劇情創意與轉折 (15%)</li>
+              <li>適合機上娛樂體驗 (15%)</li>
+              <li>AI 協作與文字表達 (10%)</li>
+              <li>截圖提交清晰度 (5%)</li>
+            </ul>
+            <a class="button primary" href="isekai_rpg_contest_rubric.docx" style="display: block; text-align: center; margin-top: 16px;">下載詳細評分準則 (Word)</a>
+          </div>
+
+          <div class="card">
+            <h3>📅 重要日程</h3>
+            <p style="font-size: 0.95rem;">
+              <strong>活動開始</strong>：即日起<br>
+              <strong>截止提交</strong>：2026年7月15日<br>
+              <strong>結果公佈</strong>：2026年7月30日
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGLISH CONTENT -->
+    <div class="lang-en wrap">
+      <section class="contest-hero">
+        <span class="eyebrow" style="color: #fbbf24; font-weight: 700;">✓ Joint Event · Enhance AI Literacy</span>
+        <h1>FlightMode AI x AI Literacy<br><span class="gradient">Isekai RPG Storytelling Contest</span></h1>
+        <p class="lead">Trapped in severe turbulence at 30,000 feet, you wake up on a floating island?! Collaborate with AI offline to create your RPG legend and win cash prizes!</p>
+        <img class="contest-poster" src="isekai_contest_poster.png" alt="Isekai RPG Storytelling Contest Poster">
+      </section>
+
+      <div class="contest-grid">
+        <div class="contest-main-content">
+          <h2>🏆 About the Contest</h2>
+          <p>This event is designed to promote <strong>AI Literacy</strong>. We encourage users to use the "FlightMode AI" app while offline or in‑flight to collaborate with local AI models, exploring the boundaries of human‑AI cooperative storytelling.</p>
+
+          <div class="contest-callout">
+            <h3>🔒 Important Privacy & Data Statement</h3>
+            <p><strong>This event does not collect any user stories or personal data through our backend.</strong></p>
+            <p>The FlightMode AI app does not feature any backend data collection or automated upload system. Participants must <strong>manually take screenshots</strong> of their story content and submit them to us. Evaluation is strictly based on the screenshots provided. All submitted files will be permanently destroyed within 30 days after the event ends.</p>
+          </div>
+
+          <h2>📋 How to Participate & Rules</h2>
+          <ul class="bullet-list">
+            <li><strong>Eligibility</strong>: Open to all users of the FlightMode AI app. Free entry.</li>
+            <li><strong>Submission Path</strong>: Create your story in-app, take screenshots, and submit them voluntarily to our email (<a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>) or via social media DM.</li>
+            <li><strong>Story Requirements</strong>: Stories must be set in an "Isekai RPG" environment, showing interactive options, RPG quests, and suitability for inflight entertainment.</li>
+            <li>Unlimited entries per person, but a maximum of one prize per participant.</li>
+          </ul>
+
+          <h2>📝 Official Story Template</h2>
+          <p>Copy and paste these templates into the app's <strong>"Script Template Workshop"</strong> to kick off your story:</p>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <h4>A. Template Title</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-title-en', this)">Copy</button>
+              <div class="template-box" id="t-title-en">[FlightMode AI x AI Literacy] Isekai RPG: Reborn at 30,000 Feet?</div>
+            </div>
+
+            <h4>B. Short Description</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-desc-en', this)">Copy</button>
+              <div class="template-box" id="t-desc-en">Severe turbulence at 30,000 feet sends you to a realm of floating islands! Use your flight-related skills to survive an offline RPG adventure with AI!</div>
+            </div>
+
+            <h4>C. AI System Prompt</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-system-en', this)">Copy</button>
+              <div class="template-box" id="t-system-en">You are the Game Master (GM / System) of an interactive text RPG. You have a humorous, slightly cheeky tone, interacting with the player.
+
+[Setting & Rules]:
+1. The player was on a flight and transported to the world of Aetheria (floating islands, dragons, airships) due to turbulence.
+2. The player starts with one random special skill (e.g., [Unlimited Wi-Fi], [Seatbelt Barrier], or [Economy Class Smash]).
+3. Your role is to guide the plot. After every player move, you must:
+   - Describe the outcome of their actions (approx. 100 words, highly visual).
+   - Display their current stats (HP 100/100, Gold, Location).
+   - Provide 3 choices (A, B, C) while allowing custom actions.
+4. The game must feel like a quest, including a main quest ("Find a flight back home") and side quests.
+5. If HP hits 0, trigger a Game Over and roast the player.</div>
+            </div>
+
+            <h4>D. Kickoff Prompt</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-kick-en', this)">Copy</button>
+              <div class="template-box" id="t-kick-en">[SYSTEM BOOTING... BEEP]
+
+"Ladies and gentlemen, we are experiencing some turbulence, please return to your seats..."
+The announcement fades as the cabin violently shakes. A blinding white light engulfs your vision.
+When you open your eyes, you hear wind instead of jet engines. You are lying on soft grass, looking up at islands floating in the sky.
+
+[System Notice]: Transferred to Aetheria!
+[Stats]: HP 100/100 | Location: Breezy Hills | Special Skill: [Seatbelt Barrier] (prevents 1 fatal blow)
+[System Voice]: Hey adventurer! Falling from the sky without breaking a bone? You're lucky. What do you do now?
+
+A. Stand up, brush off the dust, and try waving to the baby dragon overhead.
+B. Scream "Take me back to economy class!" and search your pockets for airline plastic cutlery as weapons.
+C. Explore the area to look for locals or signs of an airship.
+D. (Enter custom action)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contest-sidebar">
+          <div class="contest-prize-badge">
+            🏆 Total Prize Pool<br>
+            <strong style="font-size: 2.2rem; display: block; margin: 8px 0; letter-spacing: -1px;">HK$1,000</strong>
+            <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.9;">
+              🥇 Champion: HK$500 <br>
+              🥈 Runner-up: HK$300 <br>
+              🥉 Third Place: HK$200
+            </span>
+          </div>
+
+          <div class="card">
+            <h3>📊 Evaluation Criteria</h3>
+            <ul style="padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+              <li>World setting (20%)</li>
+              <li>RPG quests & interaction (20%)</li>
+              <li>Character & growth (15%)</li>
+              <li>Creative twists & plots (15%)</li>
+              <li>Inflight entertainment suitability (15%)</li>
+              <li>AI collaboration & writing (10%)</li>
+              <li>Screenshot readability (5%)</li>
+            </ul>
+            <a class="button primary" href="isekai_rpg_contest_rubric.docx" style="display: block; text-align: center; margin-top: 16px;">Download Word Rubric</a>
+          </div>
+
+          <div class="card">
+            <h3>📅 Key Dates</h3>
+            <p style="font-size: 0.95rem;">
+              <strong>Start Date</strong>: Now live<br>
+              <strong>Submission Closes</strong>: July 15, 2026<br>
+              <strong>Winners Announced</strong>: July 30, 2026
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIMPLIFIED CHINESE CONTENT -->
+    <div class="lang-zh-Hans wrap">
+      <section class="contest-hero">
+        <span class="eyebrow" style="color: #fbbf24; font-weight: 700;">✓ 联名赛事 · 提升 AI 应用素养</span>
+        <h1>机上档 x AI Literacy<br><span class="gradient">异世界 RPG 故事创作比赛</span></h1>
+        <p class="lead">在三万尺高空遭遇强烈气流，睁开眼竟然去了浮空界？！立刻发挥你的创意与 AI 协同创作，赢取奖金！</p>
+        <img class="contest-poster" src="isekai_contest_poster_1000_zh.png" alt="异世界 RPG 故事创作比赛 宣传海报">
+      </section>
+
+      <div class="contest-grid">
+        <div class="contest-main-content">
+          <h2>🏆 比赛简介</h2>
+          <p>本活动为推动大众 <strong>AI 应用素养（AI Literacy）</strong> 之创作赛事。旨在鼓励用户于飞机飞行中或离线状态下，使用“FlightMode AI (机上档)”与 AI 进行故事创作与写作互动，探索人机协作的无限可能。</p>
+
+          <div class="contest-callout">
+            <h3>🔒 重要数据与隐私安全声明</h3>
+            <p><strong>本活动不会通过后台收集任何用户故事或个人资料。</strong></p>
+            <p>FlightMode AI (机上档) 应用程序并未设置后台数据收集系统。参赛者必须自行在应用程序内进行<strong>屏幕截图并主动提交</strong>予主办方，主办方仅会根据参赛者主动提供的截图作评分。所有提交之截图仅用于本次活动评审，活动结束后 30 天内将被永久销毁。</p>
+          </div>
+
+          <h2>📋 参赛方式及规则</h2>
+          <ul class="bullet-list">
+            <li><strong>参赛资格</strong>：所有下载并使用 FlightMode AI (机上档) 应用程序之用户均可免费参加。</li>
+            <li><strong>提交途径</strong>：参赛者需于应用程序内创作故事，并将故事内容<strong>【自行截图】</strong>，主动发送至主办方指定电邮 (<a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>) 或社交媒体私信提交。</li>
+            <li><strong>作品规范</strong>：故事须以“异世界 RPG 冒险”为主题，展现任务感、互动性及适合机上娱乐体验之特点。</li>
+            <li>每位参赛者提交次数不限，但同一参赛者最多只能获得一个奖项。</li>
+          </ul>
+
+          <h2>📝 官方参赛故事模版 (Official Template)</h2>
+          <p>你可以直接复制以下提示词设定，贴入 App 中的<strong>“剧本模板工房”</strong>以快速建立你的故事开局：</p>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <h4>A. 模板标题</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-title-hans', this)">复制 (Copy)</button>
+              <div class="template-box" id="t-title-hans">【机上档 x AI Literacy】异世界RPG：三万尺高空の重生成为勇者？</div>
+            </div>
+
+            <h4>B. 简短描述</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-desc-hans', this)">复制 (Copy)</button>
+              <div class="template-box" id="t-desc-hans">在三万尺高空遭遇强烈气流，睁开眼竟然去了浮空界？！用你的特殊技能同 AI 展开高空 RPG 冒险！</div>
+            </div>
+
+            <h4>C. AI 人设系统指令 (System Prompt)</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-system-hans', this)">复制 (Copy)</button>
+              <div class="template-box" id="t-system-hans">你是一个RPG游戏的“系统导师”（Game Master / System），性格带点幽默，以普通话同玩家互动。
+
+【游戏背景与规则】：
+1. 玩家原先坐着飞机，因强烈气流意外转移到一个叫“奥特尔浮空界”（Aetheria）的异世界，这里有浮空岛、巨龙和飞空艇。
+2. 玩家开局拥有一个随机的“特殊技能”（例如：【无限网络】、【安全带结界】或【经济舱超重击】）。
+3. 你的职责是推动剧情。每次玩家作出一点行动或回答后，你必须：
+   - 简短描述行动后果（约100字，保持画面感与节奏感）。
+   - 显示玩家目前的状态（血量 HP 100/100，金币，目前地点）。
+   - 给予玩家三个行动选项（A, B, C），同时允许玩家自由输入其他行动。
+4. 游戏关卡充满 RPG 任务感，包含主线任务（如“寻找回到现实世界的航班”）同支线任务（如“帮矮人修理飞空艇”）。
+5. 如果玩家 HP 归零，则宣告“Game Over”并以幽默的方式嘲讽玩家。
+
+【对话风格】：
+- 使用友好风趣的语气。
+- 语气像经典的 RPG 系统通知（如：“【系统提示】你成功发动安全带结界，防御力提升！”）。</div>
+            </div>
+
+            <h4>D. 故事开场首段 (Kickoff Prompt)</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-kick-hans', this)">复制 (Copy)</button>
+              <div class="template-box" id="t-kick-hans">【系统加载中... 哔——】
+
+“各位旅客，本班机正遇上强烈气流，请回座并扣好安全带...”
+机舱广播的声音突然变得模糊，飞机剧烈震动，窗外闪过一道刺眼的金光。
+你本能地眯起眼，再次睁开眼时，耳边传来的不再是飞机引擎声，而是呼呼风声。
+
+你发现自己躺在一片柔软的草地上，天空竟然有几座浮空岛，一只青色的幼龙在你头顶飞过！
+
+【系统提示】：成功转移到“奥特尔浮空界”！
+【目前状态】：HP 100/100 | 地点：微风之丘 | 特殊技能：【安全带结界】（能抵挡一次物理致命伤）
+【系统语音】：喂！醒醒啊勇者！你从天上掉下来竟然没有散架，真是命大。你现在打算怎么办？
+
+A. 站起身拍干净沙尘，尝试同头顶那只幼龙打招呼
+B. 大喊“我要回经济舱！”，检查身上有没有携带飞机餐餐具作为武器
+C. 探索附近，寻找有没有本地人或者飞空艇的踪迹
+D. （自由输入其他行动）</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contest-sidebar">
+          <div class="contest-prize-badge">
+            🏆 总奖金池<br>
+            <strong style="font-size: 2.2rem; display: block; margin: 8px 0; letter-spacing: -1px;">HK$1,000</strong>
+            <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.9;">
+              🥇 冠军：HK$500 <br>
+              🥈 亚军：HK$300 <br>
+              🥉 季军：HK$200
+            </span>
+          </div>
+
+          <div class="card">
+            <h3>📊 评分维度</h3>
+            <ul style="padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+              <li>世界观与异世界设定 (20%)</li>
+              <li>RPG 任务感与互动性 (20%)</li>
+              <li>角色設定與成長 (15%)</li>
+              <li>剧情创意与转折 (15%)</li>
+              <li>适合机上娱乐体验 (15%)</li>
+              <li>AI 协作与文字表达 (10%)</li>
+              <li>截图提交清晰度 (5%)</li>
+            </ul>
+            <a class="button primary" href="isekai_rpg_contest_rubric.docx" style="display: block; text-align: center; margin-top: 16px;">下载详细评分准则 (Word)</a>
+          </div>
+
+          <div class="card">
+            <h3>📅 重要日程</h3>
+            <p style="font-size: 0.95rem;">
+              <strong>活动开始</strong>：即日起<br>
+              <strong>截止提交</strong>：2026年7月15日<br>
+              <strong>结果公布</strong>：2026年7月30日
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JAPANESE CONTENT -->
+    <div class="lang-ja wrap">
+      <section class="contest-hero">
+        <span class="eyebrow" style="color: #fbbf24; font-weight: 700;">✓ 共同開催 · AI活用能力の向上</span>
+        <h1>機内モードAI x AI Literacy<br><span class="gradient">異世界 RPG ストーリーコンテスト</span></h1>
+        <p class="lead">上空3万フィートで突如激しい乱気流に遭遇！目を覚ますとそこは浮遊島が浮かぶ異世界だった？！AIと共同で冒険記を紡ぎ、豪華賞金を獲得しよう！</p>
+        <img class="contest-poster" src="isekai_contest_poster_1000_zh.png" alt="異世界 RPG ストーリーコンテスト 宣伝ポスター">
+      </section>
+
+      <div class="contest-grid">
+        <div class="contest-main-content">
+          <h2>🏆 コンテスト概要</h2>
+          <p>本イベントは、参加者の<strong>AIリテラシー（AI活用能力）</strong>の向上を目的としたクリエイティブストーリーコンテストです。機内やオフライン環境で「機内モードAI」を用いて、AIモデルとのインタラクティブな小説共作を楽しんでいただけます。</p>
+
+          <div class="contest-callout">
+            <h3>🔒 個人情報およびデータ保護に関する重要なお知らせ</h3>
+            <p><strong>本コンテストでは、サーバー側でのストーリーの自動収集や個人情報の自動収集は一切行いません。</strong></p>
+            <p>「機内モードAI」アプリにはストーリーのアップロード機能などのバックエンドは存在しません。参加者はアプリ内の会話画面を<strong>各自でスクリーンショット（画面キャプチャ）し、手動で提出</strong>する必要があります。提出された画像ファイルのみに基づき審査を行います。提出された画像はコンテスト終了後30日以内に完全に削除されます。</p>
+          </div>
+
+          <h2>📋 応募方法およびルール</h2>
+          <ul class="bullet-list">
+            <li><strong>応募資格</strong>：「機内モードAI」アプリのユーザーであれば、どなたでも無料で参加できます。</li>
+            <li><strong>提出方法</strong>：アプリ内で作成したストーリーの画面を<strong>各自でスクリーンショット</strong>し、公式メール (<a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a>) またはSNSのダイレクトメッセージ（DM）でお送りください。</li>
+            <li><strong>作品のテーマ</strong>：浮遊島や竜が登場する「異世界RPG」の世界観、ゲームブック的なストーリー分岐、フライト中のエンタメとしての魅力がある作品。</li>
+            <li>お一人様何点でも応募可能ですが、重複しての受賞はできません（最優秀の1点のみが受賞対象となります）。</li>
+          </ul>
+
+          <h2>📝 公式ストーリーテンプレート</h2>
+          <p>以下のプロンプトテンプレートをコピーし、アプリ内の<strong>「ストーリー作成工房」</strong>に貼り付けることで、簡単にコンテスト応募用のストーリーを開始できます：</p>
+
+          <div class="card" style="margin-bottom: 24px;">
+            <h4>A. テンプレートタイトル</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-title-ja', this)">コピー (Copy)</button>
+              <div class="template-box" id="t-title-ja">【機内モードAI x AI Literacy】上空3万マイルからの異世界転生RPG</div>
+            </div>
+
+            <h4>B. 簡単な説明</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-desc-ja', this)">コピー (Copy)</button>
+              <div class="template-box" id="t-desc-ja">上空3万フィートで乱気流に巻き込まれ、目が覚めたら浮遊世界に？！独自のスキルを駆使して、AIと共にオフラインRPGに挑め！</div>
+            </div>
+
+            <h4>C. AIシステムプロンプト</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-system-ja', this)">コピー (Copy)</button>
+              <div class="template-box" id="t-system-ja">あなたはテキストRPGの「ゲームマスター / システム」です。少しユーモラスでウィットに富んだ性格で、日本語でプレイヤーと会話します。
+
+【世界観とルール】:
+1. プレイヤーはフライト中の飛行機内から、浮遊島、竜、飛空艇が存在する世界「エーテリア」に乱気流によって召喚されました。
+2. プレイヤーはゲーム開始時、ランダムな「特殊スキル」（例：【無限Wi-Fi】、【シートベルト結界】、【エコノミークラス・クラッシュ】）を1つ所持しています。
+3. あなたの役割はストーリーを進めることです。プレイヤーの行動後、必ず以下を返してください：
+   - 行動結果のビジュアルな描写（約100文字）。
+   - 現在のステータス（HP 100/100、所持金、現在地）。
+   - 次の行動の3つの選択肢（A, B, C）および自由記述（D）。
+4. ゲームはクエスト形式とし、メインクエスト（「現実のフライトに戻る手段を探す」）とサブクエストを設置してください。
+5. プレイヤーのHPが0になったらゲームオーバーとし、面白おかしくからかってください。</div>
+            </div>
+
+            <h4>D. ゲーム開始プロンプト</h4>
+            <div class="template-box-wrapper">
+              <button class="copy-btn" onclick="copyToClipboard('t-kick-ja', this)">コピー (Copy)</button>
+              <div class="template-box" id="t-kick-ja">【システムロード中... ピピピッ】
+
+「皆様、当機はただいま激しい乱気流を通過しております。シートベルトをもう一度ご確認ください...」
+機内アナウンスが遠のき、キャビンが大きく揺れ、窓の外でまばゆい光が弾けた。
+反射的に目を閉じ、再び開けると、エンジンの代わりに風の音が聞こえる。あなたは緑の草の上に倒れ、空に浮かぶ島々を見上げていた。
+
+【システム通知】：異世界「エーテリア」へ転移完了！
+【現在のステータス】：HP 100/100 | 場所：そよ風の丘 | 特殊スキル：【シートベルト結界】（致死ダメージを1回無効化）
+【システムガイド】：おーい勇者さま！空から落ちてきて無傷とは頑丈だね。さて、ここからどうする？
+
+A. 立ち上がってほこりを払い、頭上を飛ぶ赤ちゃんドラゴンに手を振ってみる。
+B. 「エコノミークラスに戻せ！」と叫び、ポケットにある機内食のプラスチックフォークを武器として確認する。
+C. 周辺を探索し、現地の人や飛空艇の痕跡を探す。
+D. （自由に行動を入力する）</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contest-sidebar">
+          <div class="contest-prize-badge">
+            🏆 賞金総額<br>
+            <strong style="font-size: 2.2rem; display: block; margin: 8px 0; letter-spacing: -1px;">HK$1,000</strong>
+            <span style="font-size: 0.9rem; font-weight: 500; opacity: 0.9;">
+              🥇 優勝：HK$500 <br>
+              🥈 準優勝：HK$300 <br>
+              🥉 ３位：HK$200
+            </span>
+          </div>
+
+          <div class="card">
+            <h3>📊 審査基準</h3>
+            <ul style="padding-left: 20px; font-size: 0.95rem; line-height: 1.6;">
+              <li>世界観と異世界設定 (20%)</li>
+              <li>RPGクエスト設計とインタラクティブ性 (20%)</li>
+              <li>キャラクター描写と成長 (15%)</li>
+              <li>ストーリー展開と創造性 (15%)</li>
+              <li>機内エンタメとしての適性 (15%)</li>
+              <li>AI共同制作リテラシー (10%)</li>
+              <li>スクショ画面の読みやすさ (5%)</li>
+            </ul>
+            <a class="button primary" href="isekai_rpg_contest_rubric.docx" style="display: block; text-align: center; margin-top: 16px;">審査基準書のダウンロード (Word)</a>
+          </div>
+
+          <div class="card">
+            <h3>📅 スケジュール</h3>
+            <p style="font-size: 0.95rem;">
+              <strong>応募開始</strong>：本日より受付<br>
+              <strong>応募締切</strong>：2026年7月15日<br>
+              <strong>結果発表</strong>：2026年7月30日
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span data-i18n="footer.copyright">© 2026 FlightMode AI</span>
+      <span>
+        <a href="mailto:skyhkgapp@gmail.com">skyhkgapp@gmail.com</a> ·
+        <a href="privacy.html" data-i18n="footer.privacy">Privacy</a> ·
+        <a href="terms.html" data-i18n="footer.terms">Terms</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    function copyToClipboard(elementId, btn) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerText;
+        btn.innerText = "Copied!已複製";
+        btn.style.background = "#22c55e";
+        setTimeout(() => {
+          btn.innerText = originalText;
+          btn.style.background = "";
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
